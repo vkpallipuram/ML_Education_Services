@@ -12,8 +12,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score 
-df = pandas.read_csv("/home/dirichlet/ML_Education/ML_Education_Services/data/training.csv")
-tests=pandas.read_csv("/home/dirichlet/ML_Education/ML_Education_Services/data/testing.csv")
+
+df = pandas.read_csv("training.csv")
+tests=pandas.read_csv("testing.csv")
 
 d={'Unsatisfactory':0, 'Below Average':1, 'Average':2,'Above Average':3,'Excellent':4}
  
@@ -31,7 +32,7 @@ y_test=tests['Output']
 knn = KNeighborsClassifier(n_neighbors = 5).fit(X, y)
 
 accuracy = knn.score(X_test, y_test)
-print(accuracy)
+print("KNN Accuracy ", accuracy)
   
 knn_predictions = knn.predict(X_test) 
 labels=['U','BA','A','AA','E']
