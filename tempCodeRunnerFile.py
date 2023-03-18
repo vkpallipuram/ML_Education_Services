@@ -1,2 +1,5 @@
 
-    # plt.xlabel('Predicted Label')
+    bayes()
+    neural()
+    svm()
+    log_regression()
