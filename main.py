@@ -33,11 +33,17 @@ import graphviz
 warnings.filterwarnings("ignore")
 matplotlib.rc('font',size=16)
 
+import argparse
+parser = argparse.ArgumentParser(description='Process two CSV files.')
+parser.add_argument('train', metavar='train', type=str, help='path to the training CSV file')
+parser.add_argument('test', metavar='test', type=str, help='path to the test CSV file')
+args = parser.parse_args()
+
 
 
 def knn():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d={'Unsatisfactory':0, 'Below Average':1, 'Average':2,'Above Average':3,'Excellent':4}
     
@@ -79,8 +85,8 @@ def knn():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def bayes():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d={'Unsatisfactory':0, 'Below Average':1, 'Average':2,'Above Average':3,'Excellent':4}
     
@@ -120,8 +126,8 @@ def bayes():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def neural():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d={'Unsatisfactory':0, 'Below Average':1, 'Average':2,'Above Average':3,'Excellent':4}
     
@@ -196,8 +202,8 @@ def neural():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def svm():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d = {'Unsatisfactory': 0, 'Below Average': 1, 'Average': 2, 'Above Average': 3, 'Excellent': 4}
     df['Rating'] = df['Rating'].map(d)
@@ -249,8 +255,8 @@ def svm():
     return precision_score(ytest, y_pred,average="weighted"), accuracy_score(ytest, y_pred)
 
 def log_regression():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d={'Unsatisfactory':0, 'Below Average':1, 'Average':2,'Above Average':3,'Excellent':4}
     
@@ -292,8 +298,8 @@ def log_regression():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def decision_tree():
-    df = pd.read_csv("training90.csv")
-    tests=pd.read_csv("testing45.csv")
+    df = pd.read_csv(args.train)
+    tests=pd.read_csv(args.test)
 
     d = {'Unsatisfactory': 0, 'Below Average': 1, 'Average': 2, 'Above Average': 3, 'Excellent': 4}
     df['Rating'] = df['Rating'].map(d)
@@ -335,11 +341,11 @@ def find_the_best(arr):
     max_avg = sum(arr[0])/2
     method = 0
 
-    for i in arr:
-        if max_avg < sum(i)/2:
-            max_avg = sum(i)/2
+    for i in range(len(arr)):
+        if max_avg < sum(arr[i])/2:
+            max_avg = sum(arr[i])/2
             method = i
-    print(method)
+    # print('method number ', method)
     print()
     print("The best accuracy is in ", method_dict.get(method), " with ", arr[method], "results")
 
