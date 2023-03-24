@@ -34,7 +34,7 @@ edge [fontname="helvetica"] ;
 11 -> 15 ;
 16 [label="gini = 0.0\nsamples = 25\nvalue = [0, 0, 25, 0, 0]\nclass = Average", fillcolor="#39e5c5"] ;
 15 -> 16 ;
-17 [label="Approachability <= 4.599\ngini = 0.5\nsamples = 2\nvalue = [0, 0, 0, 1, 1]\nclass = Above Average", fillcolor="#ffffff"] ;
+17 [label="Enthusiasm <= 4.411\ngini = 0.5\nsamples = 2\nvalue = [0, 0, 0, 1, 1]\nclass = Above Average", fillcolor="#ffffff"] ;
 15 -> 17 ;
 18 [label="gini = 0.0\nsamples = 1\nvalue = [0, 0, 0, 1, 0]\nclass = Above Average", fillcolor="#3c39e5"] ;
 17 -> 18 ;

@@ -330,6 +330,19 @@ def decision_tree():
     graph.render("decisionTree") 
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
+def find_the_best(arr):
+    method_dict = {0:'knn', 1:'naive bayes', 2:'neural network', 3:'svm', 4:'logistic regression', 5:'decision tree'}
+    max_avg = sum(arr[0])/2
+    method = 0
+
+    for i in arr:
+        if max_avg < sum(i)/2:
+            max_avg = sum(i)/2
+            method = i
+    print(method)
+    print()
+    print("The best accuracy is in ", method_dict.get(method), " with ", arr[method], "results")
+
 def main():
     knn_acc, knn_prec = knn()
     bayes_acc, bayes_prec = bayes()
@@ -337,6 +350,10 @@ def main():
     svm_acc, svm_prec = svm()
     regression_acc, regression_prec = log_regression()
     tree_acc, tree_prec = decision_tree()
+
+    result_dict = [[knn_acc, knn_prec], [bayes_acc, bayes_prec], [neural_acc, neural_prec], [svm_acc, svm_prec], [regression_acc, regression_prec], [tree_acc, tree_prec]]
+    
+    find_the_best(result_dict)
 
 
 if __name__ == "__main__":
