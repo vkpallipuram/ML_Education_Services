@@ -337,19 +337,29 @@ def decision_tree():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def find_the_best(arr):
-    #get the max accuracy, create a threashhold with 90% and among those find the best precision and choose it as the best
-    
     method_dict = {0:'knn', 1:'naive bayes', 2:'neural network', 3:'svm', 4:'logistic regression', 5:'decision tree'}
-    max_avg = sum(arr[0])/2
-    method = 0
+    #get the max accuracy, create a threashhold with 90% and among those find the best precision and choose it as the best
+    max_acc = 0
+    for i in arr:
+        if i[0] > max_acc:
+            max_acc = i[0]
+    print("max_acc", max_acc)
 
-    for i in range(len(arr)):
-        if max_avg < sum(arr[i])/2:
-            max_avg = sum(arr[i])/2
+    thresh = max_acc * 0.9
+
+    precision_consideration = []
+
+    for i in arr:
+        if i[0] >= thresh:
+            precision_consideration.append(i)
+
+    # print("prec consideration", precision_consideration)
+    method = 0
+    max_precision = 0
+    for i in range(len(precision_consideration)):
+        if precision_consideration[i][1] > max_precision:
+            max_precision = precision_consideration[i][1]
             method = i
-    # print('method number ', method)
-    print()
-    print("The best accuracy is in ", method_dict.get(method), " with ", arr[method], "results")
 
 def main():
     knn_acc, knn_prec = knn()
