@@ -337,6 +337,8 @@ def decision_tree():
     return precision_score(ytest, ypred,average="weighted"), accuracy_score(ytest, ypred)
 
 def find_the_best(arr):
+    #get the max accuracy, create a threashhold with 90% and among those find the best precision and choose it as the best
+    
     method_dict = {0:'knn', 1:'naive bayes', 2:'neural network', 3:'svm', 4:'logistic regression', 5:'decision tree'}
     max_avg = sum(arr[0])/2
     method = 0
