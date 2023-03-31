@@ -360,6 +360,20 @@ def find_the_best(arr):
         if precision_consideration[i][1] > max_precision:
             max_precision = precision_consideration[i][1]
             method = i
+    # print("max_precision", max_precision)
+    print("The best result is in ", method_dict.get(method), " with ", arr[method], "results")
+
+    # method_dict = {0:'knn', 1:'naive bayes', 2:'neural network', 3:'svm', 4:'logistic regression', 5:'decision tree'}
+    # max_avg = sum(arr[0])/2
+    # method = 0
+
+    # for i in range(len(arr)):
+    #     if max_avg < sum(arr[i])/2:
+    #         max_avg = sum(arr[i])/2
+    #         method = i
+    # # print('method number ', method)
+    # print()
+    # print("The best accuracy is in ", method_dict.get(method), " with ", arr[method], "results")
 
 def main():
     knn_acc, knn_prec = knn()
