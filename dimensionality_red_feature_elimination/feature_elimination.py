@@ -16,7 +16,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-df = pd.read_csv('training90.csv')
+df = pd.read_csv('dataset/training90.csv')
 X = df.drop(["Rating"],axis=1)
 y = df["Rating"]
 
