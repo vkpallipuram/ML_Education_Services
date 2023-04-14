@@ -1,0 +1,66 @@
+This was by far one of the most fun and intuitive classes I have taken here at pacific. The professors teaching style and commitment exceeded my expectations.
+Great class!
+
+You do not need more office hours. You need more useful office hours.
+
+Please do not send out important assignment updates through Canvas only. You should amend the original assignment description so we don't have to dig through
+our messages to find the single one in which you changed it. Please proof-read your slides to remove errors from them.
+
+Although I realize the amount of effort you put in preparing and executing lectures, I just wish the content posted online were as effective as the lectures because I
+simply learn more efficiently on my own. I also learn code better reading from my screen than reading from a board or projector. Would be nice if examples in class
+and solutions to discussion questions were posted online too. Of course this would not encourage class participation and attendance, but I just feel like learning code in
+a lecture setting is inefficient.
+
+passionate about teaching, but he does not know enough to teach this class. For example, (it happens several times throughout the semester)
+he could not answer some fundamental question regarding system verilog (One of the question was why a non-blocking statement was used in a always_comb block).
+And he told us to go home and google about it and discussed next class, which of course, he completely forgot about it the next class.
+
+Everything is solid but I would like more coding along tutorials that we have done in class. But a step further would be the video recordings of problems and how to
+utilize some techniques. I found the videos to be helpful because you can pause the video while trying to understand what is going on. Passionate about everything in
+this class and is super knowledgeable about everything in this class.
+
+I like being in this class because explanation of the material is really clear. Professor is nice and so helpful when i need help. He is very good teacher. Thank for
+letting me be in this class.
+
+highly invested in the success of his students. I noticed he will take note of students who struggle in the class and go the extra mile to help
+them by coming around during in class exercises and checking in with them. He is very helpful in office hours and explains things in a very comprehensible manner. He
+makes the class engaging by including funny jokes and remains optimistic.
+
+He challenges students with his rigorous projects, but always remains available and consistently asks students to
+visit his office hours. While his projects are challenging and sometimes difficult and/or a lot of work, he grades accordingly and will not remove too many points for little
+mistakes. He is a very reasonable professor who prides himself in helping his students, and is very encouraging. He is always available by email on weekends, usually
+from early in the morning to late at night. He never thinks twice about checking students code to understand issues to help them debug, which is extremely helpful
+when learning how to use useful libraries such as CUDA or MPI.
+
+I think that the lectures were sometimes repetitive and more time should have went to activities or work days. The class topics are something that you can really
+only learn through practice and experience rather than lecturing. There are also too many projects, as the last few weeks of the semester has three different projects
+occurring at once. One of them should be dropped to allow more time for the final project. More time should go into MPI and CUDA and less towards C warm-up an
+OpenMP (which are both extremely easy tasks for a graduate student).
+
+one of my favorite professors due to his ability to structure and explain course material. He is always eager to teach the subject inside and out of class
+effectively making class and office hours much more enjoyable to go to. Overall one of the best professors I've had in my college career
+
+Very challenging class, Quarantine didn't help me for this class as most of the handouts/supportive material need to be printed and I did not have that. Having an
+ipad/think pad would help me in terms of writing and taking notes
+
+The area I think has the most potential for growth is in understanding students' questions. I know it can be very difficult, especially when a student is not a native
+english speaker and/or might be very unclear when conveying their ideas, but I think the only area where I thought "hmm, that could've been handled better" was when
+someone exhibited a misunderstanding. The professor and the student would be talking past each other for a little bit until one of them says something that makes it click.
+There's no easy way to get better at that, but some possibilites could be intentionally trying to think about how a layperson might think about a specific concept, what
+analogies they might use to think about it (whether or not they really fit). Another could be to ask them questions to try and probe at their understanding and see if they
+understand it as well as they think they do. You could also try asking students who come to office hours to try to explain the subject they're confused about to the best of
+their ability, so that you can more easily find the problem. I know all of these are abstract and subjective, which is not always the most helpful in a piece of feedback, but
+it's the only area that stood out to me and it's a really hard one to quantify. And don't let the length of this wordy response fool you, this isn't meant to be a harsh critique
+(still a great professor), it's just one that's really hard to write suggestions for.
+
+He took time out his everyday schedule, even on weekends, to talk to his students and help them with assignment related questions. His video lectures were confusingsometimes but talking in person with him really helped bring everything together and helped me really understand what was going on. Overall amazing professor I wouldenjoy to have again.
+
+As stated before, I had no problems with the teaching style of the course or the professor himself. Things simply became pretty difficult due to the transition to onlinelearning at a time where the concepts being taught in class would be better taught face to face.
+
+professors. He challenges students with his rigorous projects, but always remains available and consistently asks students tovisit his office hours. While his projects are challenging and sometimes difficult and/or a lot of work, he grades accordingly and will not remove too many points for littlemistakes. He is a very reasonable professor who prides himself in helping his students, and is very encouraging. He is always available by email on weekends, usuallyfrom early in the morning to late at night.
+
+I think that the lectures were sometimes repetitive and more time should have went to activities or work days. The class topics are something that you can reallyonly learn through practice and experience rather than lecturing. There are also too many projects, as the last few weeks of the semester has three different projectsoccurring at once. One of them should be dropped to allow more time for the final project.
+
+This course was likely the most challenging course that I have completed at Pacific. I believe that in addition to the material taught in this course, I also learned howto succeed in a graduate-level course. This course has exposed me to what is possible in terms of high performance computing, which is highly applicable to my futureaspirations as a computational scientist. I enjoyed the fact that each project built on itself, in order to pursue an in-depth exploration of the parallelism of particularalgorithms, as well as a final presentation to pursue our own interests.
+
+
