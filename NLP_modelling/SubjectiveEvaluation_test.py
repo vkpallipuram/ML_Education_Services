@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[51]:
 
 
 lines = open("subjective_eval.txt").read().splitlines()
-#print(lines) #read subjective_eval.txt
-
-
-# In[64]:
 
 
 import nltk
@@ -65,11 +60,6 @@ img = Image("Professor_Ratings_Sentiment_Analysis.png")
 #display(img)
 
 
-
-
-# In[65]:
-
-
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -100,12 +90,6 @@ for line in lines:
             if word not in stop_words:
                 tokens.append(word)
 
-# Print the extracted tokens
-#print(tokens)
-
-
-# In[66]:
-
 
 # Initialize the sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
@@ -129,8 +113,6 @@ sid = SentimentIntensityAnalyzer()
 # Calculate the sentiment score for the text
 sentiment_score = sid.polarity_scores(' '.join(tokens))
 
-# Print the sentiment score
-print(sentiment_score)
 
 # Print the overall sentiment
 if sentiment_score['compound'] > 0:
@@ -153,10 +135,10 @@ plt.axis('equal')
 plt.title('Professor Ratings Sentiment Analysis')
 
 # Show the plot
-plt.show()
+#plt.show()
 
 
-# In[68]:
+# In[5]:
 
 
 from nltk.corpus import wordnet
@@ -191,9 +173,6 @@ groups = group_tokens(tokens)
 #pprint(groups)
 
 
-# In[69]:
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -217,7 +196,7 @@ plot_groups(groups)
 
 # ## Word2Vec
 
-# In[70]:
+# In[8]:
 
 
 import numpy as np
@@ -226,9 +205,6 @@ import string
 from tqdm import tqdm
 from scipy.spatial.distance import cosine
 import matplotlib.pyplot as plt
-
-
-# In[71]:
 
 
 with open('stopwords.txt') as f:
@@ -245,7 +221,7 @@ text = [w for w in text if w not in stopwords][:2000]
 
 # ## Prepare Training Data
 
-# In[72]:
+# In[10]:
 
 
 WINDOW_SIZE = 3 # 3 words before and after the main word
@@ -276,7 +252,7 @@ df = df[(df.center_word.isin(words)) & (df.context_word.isin(words))].reset_inde
 df
 
 
-# In[73]:
+# In[11]:
 
 
 def sigmoid(v, scale=1):
@@ -376,37 +352,29 @@ def plot_words(debug):
 
 # ### Run Word2Vec
 
-# In[74]:
+# In[12]:
 
 
-import matplotlib.pyplot as plt
+EMBEDDING_SIZE = 5  #dimensions
 
-EMBEDDING_SIZE = 5  # dimensions
-
-main_embeddings = np.random.normal(0, 0.1, (len(words), EMBEDDING_SIZE))
-row_norms = np.sqrt((main_embeddings**2).sum(axis=1)).reshape(-1, 1)
+main_embeddings = np.random.normal(0,0.1,(len(words), EMBEDDING_SIZE))
+row_norms = np.sqrt((main_embeddings**2).sum(axis=1)).reshape(-1,1)
 main_embeddings = main_embeddings / row_norms
 
-context_embeddings = np.random.normal(0, 0.1, (len(words), EMBEDDING_SIZE))
-row_norms = np.sqrt((context_embeddings**2).sum(axis=1)).reshape(-1, 1)
+context_embeddings = np.random.normal(0,0.1,(len(words), EMBEDDING_SIZE))
+row_norms = np.sqrt((context_embeddings**2).sum(axis=1)).reshape(-1,1)
 context_embeddings = context_embeddings / row_norms
 
 main_embeddings = pd.DataFrame(data=main_embeddings, index=words)
 context_embeddings = pd.DataFrame(data=context_embeddings, index=words)
 
-for i in range(25):
+#the last iteration of a loop represents the most updated state of the embeddings after multiple updates. Each iteration of the loop in the given code updates the embeddings based on some criteria or algorithm.
+
+for _ in range(25):
     main_embeddings, context_embeddings = update_embeddings(df, main_embeddings, context_embeddings, 0.1, ['difficult', 'professor'])
-    if i == 24:
-        # Draw graph for the 25th iteration
-        plt.plot(main_embeddings[0], main_embeddings[1], 'ro')
-        plt.title("Embeddings - 25th Iteration")
-        plt.show()
-        break
-    else:
-        plt.clf()
 
+# red = main vectors (the one that we keep at the end), blue = context vectors
 
-# In[75]:
 
 
 L = []
@@ -419,9 +387,6 @@ for w1 in words:
 sorted([item for item in L if item[0] == 'course'], key=lambda t: -t[2])[:30]
 
 #sorted based on highest similarity on top
-
-
-# In[63]:
 
 
 import matplotlib.pyplot as plt
@@ -487,8 +452,6 @@ plt.axvline(0, color='k', linestyle='--', alpha=0.5)
 plt.axhline(0, color='k', linestyle='--', alpha=0.5)
 
 
-# In[16]:
-
 
 plt.figure(figsize=(5,5))
 
@@ -500,22 +463,5 @@ words_used = words_used[chosen_idxs]
 plt.scatter(transf_embeddings[:,0], transf_embeddings[:,1])
 for idx,row in enumerate(transf_embeddings):
     plt.text(row[0], row[1], str(words_used[idx]))
-
-
-# In[ ]:
-
-
-## positive and negative tokens that appears often (top 30) // Professor and Course
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 
 
